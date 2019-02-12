@@ -8,7 +8,7 @@ $manager_script = <<SCRIPT
 echo Swarm Init...
 docker swarm init --listen-addr 10.100.199.200:2377 --advertise-addr 10.100.199.200:2377
 docker swarm join-token --quiet worker > /vagrant/worker_token
-docker run -ti -d -p 5000:5000 -e HOST=localhost -e PORT=5000 -v /var/run/docker.sock:/var/run/docker.sock manomarks/visualizer
+docker run -ti -d -p 5000:5000 -e HOST=localhost -e PORT=5000 -v /var/run/docker.sock:/var/run/docker.sock dockersamples/visualizer
 SCRIPT
 
 $worker_script = <<SCRIPT
